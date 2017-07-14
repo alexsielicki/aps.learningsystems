@@ -1,0 +1,55 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="lesson_materials" type="zope.schema.URI">
+      <description/>
+      <required>False</required>
+      <title>Lesson Materials</title>
+    </field>
+    <field name="apsdeveloment_grades" type="zope.schema.Set">
+      <description/>
+      <required>False</required>
+      <title>Grade(s)</title>
+      <value_type type="zope.schema.Choice">
+        <values>
+          <element>K</element>
+          <element>1</element>
+          <element>2</element>
+          <element>3</element>
+          <element>4</element>
+          <element>5</element>
+          <element>6</element>
+          <element>7</element>
+          <element>8</element>
+          <element>9</element>
+          <element>10</element>
+          <element>11</element>
+          <element>12</element>
+          <element>Early Childhood</element>
+          <element>Elementary</element>
+          <element>Middle</element>
+          <element>High</element>
+          <element>K-12</element>
+        </values>
+      </value_type>
+    </field>
+    <field name="aps_lessonplan_video_type" type="zope.schema.Choice">
+      <description>If applicable</description>
+      <required>False</required>
+      <title>Video Type</title>
+      <values>
+        <element>YouTube</element>
+        <element>Vimeo</element>
+      </values>
+    </field>
+    <field name="aps_lessonplan_video_suffix" type="zope.schema.TextLine">
+      <description>If applicable</description>
+      <required>False</required>
+      <title>Video Suffix</title>
+    </field>
+    <field name="aps_lessonplan_tipc_ratings" type="plone.app.textfield.RichText">
+      <description/>
+      <required>False</required>
+      <title>TIPC Ratings</title>
+    </field>
+  </schema>
+</model>

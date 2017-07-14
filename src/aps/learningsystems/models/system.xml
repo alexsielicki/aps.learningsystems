@@ -1,0 +1,121 @@
+<model xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema">
+  <schema>
+    <field name="link_to_company_website" type="zope.schema.URI">
+      <description>External link to company website</description>
+      <required>False</required>
+      <title>Link To Company Website</title>
+    </field>
+    <field name="contact_info" type="zope.schema.Text">
+      <description>Contact information of department that supports the tool (if applicable)</description>
+      <required>False</required>
+      <title>Contact Info</title>
+    </field>
+    <field name="aps_system_technology" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Technology</title>
+      <values>
+        <element>Website</element>
+        <element>Mobile app</element>
+        <element>Hardware</element>
+        <element>Software</element>
+      </values>
+    </field>
+    <field name="aps_system_grades" type="zope.schema.Set">
+      <description/>
+      <required>False</required>
+      <title>Grade(s)</title>
+      <value_type type="zope.schema.Choice">
+        <values>
+          <element>K</element>
+          <element>1</element>
+          <element>2</element>
+          <element>3</element>
+          <element>4</element>
+          <element>5</element>
+          <element>6</element>
+          <element>7</element>
+          <element>8</element>
+          <element>9</element>
+          <element>10</element>
+          <element>11</element>
+          <element>12</element>
+          <element>Early Childhood</element>
+          <element>Elementary</element>
+          <element>Middle</element>
+          <element>High</element>
+          <element>K-12</element>
+        </values>
+      </value_type>
+    </field>
+    <field name="aps_system_status" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>APS</title>
+      <values>
+        <element>Supported</element>
+        <element>Approved</element>
+        <element>Approved with Cautions</element>
+        <element>Pilot</element>
+        <element>Not Approved</element>
+        <element>Pending</element>
+        <element>Not Applicable</element>
+        <element>Not Evaluated</element>
+      </values>
+    </field>
+    <field name="aps_system_ferpa" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>FERPA</title>
+      <values>
+        <element>Approved</element>
+        <element>Parent Consent Required</element>
+        <element>Not Applicable</element>
+      </values>
+    </field>
+    <field name="aps_system_cost" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Cost</title>
+      <values>
+        <element>Free</element>
+        <element>Paid</element>
+        <element>District Purchased</element>
+        <element>Unknown</element>
+        <element>Mixed</element>
+      </values>
+    </field>
+    <field name="aps_system_language" type="zope.schema.Choice">
+      <description/>
+      <required>False</required>
+      <title>Language</title>
+      <values>
+        <element>English</element>
+        <element>Spanish</element>
+        <element>Vietnamese</element>
+        <element>Chinese</element>
+        <element>Korean</element>
+        <element>Arabic</element>
+        <element>Farsi</element>
+        <element>Albanian</element>
+        <element>Somali</element>
+        <element>Swahili</element>
+        <element>French</element>
+        <element>German</element>
+        <element>Italian</element>
+        <element>Other</element>
+      </values>
+    </field>
+    <field name="aps_system_support_information" type="plone.app.textfield.RichText">
+      <description/>
+      <required>False</required>
+      <title>Support Information</title>
+    </field>
+    <field name="aps_system_requirements" type="plone.app.textfield.RichText">
+      <description/>
+      <required>False</required>
+      <title>System Requirements</title>
+    </field>
+    <fieldset name="aps_system_resource_overview" label="Resource Overview"/>
+  </schema>
+</model>

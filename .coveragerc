@@ -1,0 +1,6 @@
+[report]
+include =
+    src/aps/*
+omit =
+    */test*
+    */upgrades/*
