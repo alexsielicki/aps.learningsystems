@@ -4,5 +4,10 @@
       <description/>
       <title>File</title>
     </field>
+    <field name="aps_accessible" type="zope.schema.Bool" form:after="*">
+      <description/>
+      <title>This content is accessible</title>
+      <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+    </field>
   </schema>
 </model>

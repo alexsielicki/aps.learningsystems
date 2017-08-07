@@ -121,6 +121,11 @@
       <required>False</required>
       <title>Login Information</title>
     </field>
+    <field name="aps_accessible" type="zope.schema.Bool" form:after="*">
+      <description/>
+      <title>This content is accessible</title>
+      <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
+    </field>
     <fieldset name="aps_system_resource_overview" label="Resource Overview"/>
   </schema>
 </model>
