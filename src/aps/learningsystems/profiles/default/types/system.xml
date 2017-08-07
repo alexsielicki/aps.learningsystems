@@ -150,6 +150,11 @@
         &lt;required&gt;False&lt;/required&gt;
         &lt;title&gt;System Requirements&lt;/title&gt;
       &lt;/field&gt;
+      &lt;field name="aps_system_login_information" type="plone.app.textfield.RichText"&gt;
+        &lt;description/&gt;
+        &lt;required&gt;False&lt;/required&gt;
+        &lt;title&gt;Login Information&lt;/title&gt;
+      &lt;/field&gt;
       &lt;fieldset name="aps_system_resource_overview" label="Resource Overview"/&gt;
     &lt;/schema&gt;
   &lt;/model&gt;</property>
