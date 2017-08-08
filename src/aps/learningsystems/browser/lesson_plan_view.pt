@@ -19,9 +19,10 @@
           tal:define="field context/lesson_materials;
                       widget nocall: view/w/lesson_materials;">
           <tal:aps-widget metal:define-macro="aps-widget">
-            <div tal:condition="field"
+            <div style="margin-bottom: 20px;"
+                 tal:condition="field"
                  tal:attributes="class string:aps-learningsystems-field-${widget/__name__}">
-              <label tal:content="structure widget/label" tal:condition="not: noLabel|nothing" />
+              <strong tal:content="structure widget/label" tal:condition="not: noLabel|nothing" />
               <div tal:content="structure widget/render" />
             </div>
           </tal:aps-widget>
