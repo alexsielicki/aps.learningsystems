@@ -15,9 +15,9 @@
   <element value="aps_lesson_plan_student_artifact"/>
  </property>
  <property name="allow_discussion">False</property>
- <property name="default_view">view</property>
+ <property name="default_view">lesson_plan_view</property>
  <property name="view_methods">
-  <element value="view"/>
+  <element value="lesson_plan_view" />
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.AddPortalContent</property>

@@ -1,0 +1,67 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        <p class="documentDescription" tal:content="context/description" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <tal:widget-definitions 
+          tal:define="field context/lesson_materials;
+                      widget nocall: view/w/lesson_materials;">
+          <tal:aps-widget metal:define-macro="aps-widget">
+            <div tal:condition="field"
+                 tal:attributes="class string:aps-learningsystems-field-${widget/__name__}">
+              <label tal:content="structure widget/label" tal:condition="not: noLabel|nothing" />
+              <div tal:content="structure widget/render" />
+            </div>
+          </tal:aps-widget>
+        </tal:widget-definitions>
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/apsdeveloment_grades;
+                      widget nocall: view/w/apsdeveloment_grades;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_lessonplan_tipc_ratings;
+                      widget nocall: view/w/aps_lessonplan_tipc_ratings;"
+        />
+
+        <tal:video
+          tal:define="field context/aps_lessonplan_video_type;
+                      suffixField context/aps_lessonplan_video_suffix;
+                      widget nocall: view/w/aps_lessonplan_video_type;"
+          tal:condition="python: field and suffixField">
+          <div>
+            <iframe width="555" height="312" frameborder="0" allowfullscreen
+               tal:condition="python: field == 'YouTube'" 
+               tal:attributes="src string:https://www.youtube.com/embed/${suffixField};"></iframe>
+            <iframe width="555" height="312" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen
+              tal:condition="python: field == 'Vimeo'"
+              tal:attributes="src string:https://player.vimeo.com/video/${suffixField};"></iframe>
+
+          </div>
+        </tal:video>
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/text;
+                      widget nocall: view/w/IRichText.text;
+                      noLabel True;"
+        />
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>

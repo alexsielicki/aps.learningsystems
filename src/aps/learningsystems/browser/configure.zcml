@@ -17,4 +17,13 @@
       directory="static"
       />
 
+  <browser:page
+    for="*"
+    class="plone.dexterity.browser.view.DefaultView"
+    name="lesson_plan_view"
+    template="lesson_plan_view.pt"
+    permission="zope2.View"
+    />
+
+
 </configure>
