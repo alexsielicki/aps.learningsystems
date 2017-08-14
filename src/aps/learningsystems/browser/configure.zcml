@@ -25,5 +25,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    for="*"
+    class="plone.dexterity.browser.view.DefaultView"
+    name="device___hardware_view"
+    template="device___hardware_view.pt"
+    permission="zope2.View"
+    />
+
 
 </configure>
