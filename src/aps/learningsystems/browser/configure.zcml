@@ -33,5 +33,13 @@
     permission="zope2.View"
     />
 
+  <browser:page
+    for="*"
+    class="plone.dexterity.browser.view.DefaultView"
+    name="system_view"
+    template="system_view.pt"
+    permission="zope2.View"
+    />
+
 
 </configure>

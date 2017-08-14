@@ -12,9 +12,9 @@
  <property name="filter_content_types">True</property>
  <property name="allowed_content_types"/>
  <property name="allow_discussion">False</property>
- <property name="default_view">view</property>
+ <property name="default_view">system_view</property>
  <property name="view_methods">
-  <element value="view"/>
+  <element value="system_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.AddPortalContent</property>
@@ -160,7 +160,6 @@
         &lt;title&gt;This content is accessible&lt;/title&gt;
         &lt;form:widget type="z3c.form.browser.radio.RadioFieldWidget"/&gt;
       &lt;/field&gt;
-      &lt;fieldset name="aps_system_resource_overview" label="Resource Overview"/&gt;
     &lt;/schema&gt;
   &lt;/model&gt;</property>
  <property name="model_file">aps.learningsystems:models/system.xml</property>

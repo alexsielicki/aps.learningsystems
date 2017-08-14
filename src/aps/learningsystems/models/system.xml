@@ -126,6 +126,5 @@
       <title>This content is accessible</title>
       <form:widget type="z3c.form.browser.radio.RadioFieldWidget"/>
     </field>
-    <fieldset name="aps_system_resource_overview" label="Resource Overview"/>
   </schema>
 </model>

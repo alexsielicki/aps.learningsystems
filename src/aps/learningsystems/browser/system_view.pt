@@ -1,0 +1,88 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en"
+      xmlns:tal="http://xml.zope.org/namespaces/tal"
+      xmlns:metal="http://xml.zope.org/namespaces/metal"
+      xmlns:i18n="http://xml.zope.org/namespaces/i18n"
+      lang="en"
+      metal:use-macro="context/main_template/macros/master"
+      i18n:domain="example.conference">
+<body>
+
+<metal:main fill-slot="main">
+    <tal:main-macro metal:define-macro="main">
+        <div tal:replace="structure provider:plone.abovecontenttitle" />
+        <h1 class="documentFirstHeading" tal:content="context/title" />
+        <div tal:replace="structure provider:plone.belowcontenttitle" />
+        <p class="documentDescription" tal:content="context/description" />
+        <div tal:replace="structure provider:plone.abovecontentbody" />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/link_to_company_website;
+                      widget nocall: view/w/link_to_company_website;"
+        />
+
+        <h2 tal:condition="python: context.aps_system_technology or context.aps_system_grades or context.aps_system_status
+                                   or context.aps_system_ferpa or context.aps_system_cost or context.aps_system_language">
+          Resource Overview
+        </h2>
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_technology;
+                      widget nocall: view/w/aps_system_technology;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_grades;
+                      widget nocall: view/w/aps_system_grades;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_status;
+                      widget nocall: view/w/aps_system_status;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_ferpa;
+                      widget nocall: view/w/aps_system_ferpa;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_cost;
+                      widget nocall: view/w/aps_system_cost;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_language;
+                      widget nocall: view/w/aps_system_language;"
+        />
+
+        <h2 tal:condition="python: context.contact_info or context.aps_system_support_information or context.aps_system_requirements
+                                   or context.aps_system_login_information">
+          Resource Support
+        </h2>
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/contact_info;
+                      widget nocall: view/w/contact_info;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_support_information;
+                      widget nocall: view/w/aps_system_support_information;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_requirements;
+                      widget nocall: view/w/aps_system_requirements;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_login_information;
+                      widget nocall: view/w/aps_system_login_information;"
+        />
+
+        <div tal:replace="structure provider:plone.belowcontentbody" />
+    </tal:main-macro>
+</metal:main>
+
+</body>
+</html>
