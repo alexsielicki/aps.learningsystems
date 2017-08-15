@@ -19,6 +19,14 @@
 
   <browser:page
     for="*"
+    name="lesson_plans_view"
+    template="lesson_plans_view.pt"
+    class="plone.app.contenttypes.browser.folder.FolderView"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="*"
     class="plone.dexterity.browser.view.DefaultView"
     name="lesson_plan_view"
     template="lesson_plan_view.pt"
