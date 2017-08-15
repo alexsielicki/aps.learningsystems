@@ -21,13 +21,13 @@
     for="*"
     name="lesson_plans_view"
     template="lesson_plans_view.pt"
-    class="plone.app.contenttypes.browser.folder.FolderView"
+    class=".lesson_plan.LessonPlanView"
     permission="zope2.View"
     />
 
   <browser:page
     for="*"
-    class="plone.dexterity.browser.view.DefaultView"
+    class=".lesson_plan.LessonPlanView"
     name="lesson_plan_view"
     template="lesson_plan_view.pt"
     permission="zope2.View"
@@ -35,7 +35,7 @@
 
   <browser:page
     for="*"
-    class="plone.dexterity.browser.view.DefaultView"
+    class=".lesson_plan.LessonPlanView"
     name="device___hardware_view"
     template="device___hardware_view.pt"
     permission="zope2.View"
@@ -43,7 +43,7 @@
 
   <browser:page
     for="*"
-    class="plone.dexterity.browser.view.DefaultView"
+    class=".lesson_plan.LessonPlanView"
     name="system_view"
     template="system_view.pt"
     permission="zope2.View"

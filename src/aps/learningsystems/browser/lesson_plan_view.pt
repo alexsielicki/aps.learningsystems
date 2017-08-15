@@ -60,6 +60,70 @@
                       noLabel True;"
         />
 
+  <metal:listingmacro define-macro="listing">
+    <tal:results define="batch view/batch">
+      <tal:listing condition="batch">
+        <h2>Student Artifacts</h2>
+        <div class="entries" metal:define-slot="entries">
+          <tal:repeat repeat="item batch" metal:define-macro="entries">
+            <tal:block tal:define="obj item/getObject;
+                item_url item/getURL;
+                item_id item/getId;
+                item_title item/Title;
+                item_description item/Description;
+                item_type item/PortalType;
+                item_modified item/ModificationDate;
+                item_created item/CreationDate;
+                item_type_class python:'contenttype-' + view.normalizeString(item_type);
+                item_wf_state item/review_state;
+                item_wf_state_class python:'state-' + view.normalizeString(item_wf_state);
+                item_creator item/Creator;
+                item_link python:item_type in view.use_view_action and item_url+'/view' or item_url;                
+                item_is_event python:view.is_event(obj);
+                item_has_image python:item.getIcon">
+              <metal:entry fill-slot="entry">
+
+                <article class="tileItem" tal:define="obj item/getObject">
+                  <h3 class="tileHeadline" metal:define-macro="listitem">
+                    <a class="summary url"
+                        tal:attributes="href item_link;
+                                        title item_type"
+                        tal:content="item_title">
+                      Item Title
+                    </a>
+                  </h3>
+
+                  <div class="tileImage"
+                       tal:condition="item_has_image"
+                       tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'">
+                    <a tal:attributes="href item_link">
+                      <img tal:define="scales obj/@@images;
+                                       scale python:scales.scale('image', 'thumb')"
+                          tal:replace="structure python:scale and scale.tag() or None" />
+                    </a>
+                  </div>
+
+                  <div class="tileBody" tal:condition="item_description">
+                    <span class="description" tal:content="item_description">
+                      description
+                    </span>
+                  </div>
+
+                  <div class="visualClear"><!-- --></div>
+
+                </article>
+
+              </metal:entry>
+            </tal:block>
+          </tal:repeat>
+        </div>
+
+        <div metal:use-macro="context/batch_macros/macros/navigation" />
+
+      </tal:listing>
+    </tal:results>
+  </metal:listingmacro>
+
         <div tal:replace="structure provider:plone.belowcontentbody" />
     </tal:main-macro>
 </metal:main>
