@@ -36,6 +36,14 @@
   <browser:page
     for="*"
     class=".lesson_plan.LessonPlanView"
+    name="aps_lesson_plan_student_artifact_view"
+    template="aps_lesson_plan_student_artifact_view.pt"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="*"
+    class=".lesson_plan.LessonPlanView"
     name="device___hardware_view"
     template="device___hardware_view.pt"
     permission="zope2.View"

@@ -42,6 +42,13 @@
             </span>
           </div>
 
+          <div tal:condition="item/apsdeveloment_grades">
+            <strong>Grade(s):</strong> 
+            <span tal:repeat="grade item/apsdeveloment_grades">
+             <span tal:content="grade">[grade]</span><span tal:condition="not: repeat/grade/end">,</span>
+            </span>
+          </div>
+
           <div class="tileFooter">
             <a tal:attributes="href item_link"
                 i18n:translate="read_more">
