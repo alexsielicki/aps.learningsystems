@@ -16,6 +16,20 @@
 
         <article class="tileItem" tal:define="obj item/getObject"
           style="border-bottom: 1px solid #cccccc; padding-bottom: 20px;">
+
+          <div class="tileImage"
+               tal:condition="item_has_image"
+               tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'"
+               style="float: right; margin-top: 5px;">
+            <a tal:define="link python: item.link_to_company_website or item_link;"
+               tal:attributes="href link;
+                               target python: '_blank' if item.link_to_company_website else '_self';">
+              <img tal:define="scales obj/@@images;
+                               scale python:scales.scale('image', 'thumb')"
+                  tal:replace="structure python:scale and scale.tag() or None" />
+            </a>
+          </div>
+
           <h2 class="tileHeadline" metal:define-macro="listitem">
             <a class="summary url"
                 tal:define="link python: item.link_to_company_website or item_link;"
@@ -25,19 +39,6 @@
               Item Title
             </a>
           </h2>
-
-          <div class="tileImage"
-               tal:condition="item_has_image"
-               tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'"
-               style="float: right;">
-            <a tal:define="link python: item.link_to_company_website or item_link;"
-               tal:attributes="href link;
-                               target python: '_blank' if item.link_to_company_website else '_self';">
-              <img tal:define="scales obj/@@images;
-                               scale python:scales.scale('image', 'thumb')"
-                  tal:replace="structure python:scale and scale.tag() or None" />
-            </a>
-          </div>
 
           <div class="tileBody" tal:condition="item_description">
             <span class="description" tal:content="item_description">
