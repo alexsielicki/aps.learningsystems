@@ -16,9 +16,9 @@
   <element value="device___hardware"/>
  </property>
  <property name="allow_discussion">False</property>
- <property name="default_view">view</property>
+ <property name="default_view">device___hardware_library_view</property>
  <property name="view_methods">
-  <element value="view"/>
+  <element value="device___hardware_library_view"/>
  </property>
  <property name="default_view_fallback">False</property>
  <property name="add_permission">cmf.ManagePortal</property>

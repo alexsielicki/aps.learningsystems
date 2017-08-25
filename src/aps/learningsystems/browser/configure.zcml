@@ -43,6 +43,14 @@
 
   <browser:page
     for="*"
+    name="device___hardware_library_view"
+    template="device___hardware_library_view.pt"
+    class=".lesson_plan.LessonPlanView"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="*"
     class=".lesson_plan.LessonPlanView"
     name="device___hardware_view"
     template="device___hardware_view.pt"
