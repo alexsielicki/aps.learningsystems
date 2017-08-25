@@ -15,14 +15,14 @@
       <metal:entry fill-slot="entry">
 
         <article class="tileItem" tal:define="obj item/getObject">
-          <h3 class="tileHeadline" metal:define-macro="listitem">
+          <h2 class="tileHeadline" metal:define-macro="listitem">
             <a class="summary url"
                 tal:attributes="href item_link;
                                 title item_type"
                 tal:content="item_title">
               Item Title
             </a>
-          </h3>
+          </h2>
 
           <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
 

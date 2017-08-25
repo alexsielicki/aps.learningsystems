@@ -14,8 +14,9 @@
     <metal:block use-macro="context/@@listing_view/macros/entries">
       <metal:entry fill-slot="entry">
 
-        <article class="tileItem" tal:define="obj item/getObject">
-          <h3 class="tileHeadline" metal:define-macro="listitem">
+        <article class="tileItem" tal:define="obj item/getObject"
+          style="border-bottom: 1px solid #cccccc; padding-bottom: 20px;">
+          <h2 class="tileHeadline" metal:define-macro="listitem">
             <a class="summary url"
                 tal:define="link python: item.link_to_company_website or item_link;"
                 tal:attributes="href link;
@@ -23,7 +24,7 @@
                 tal:content="item_title">
               Item Title
             </a>
-          </h3>
+          </h2>
 
           <div class="tileImage"
                tal:condition="item_has_image"
