@@ -51,6 +51,14 @@
 
   <browser:page
     for="*"
+    name="system_warehouse_view"
+    template="system_warehouse_view.pt"
+    class=".lesson_plan.LessonPlanView"
+    permission="zope2.View"
+    />
+
+  <browser:page
+    for="*"
     class=".lesson_plan.LessonPlanView"
     name="system_view"
     template="system_view.pt"

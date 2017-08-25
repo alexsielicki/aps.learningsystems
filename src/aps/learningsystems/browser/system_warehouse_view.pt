@@ -17,19 +17,21 @@
         <article class="tileItem" tal:define="obj item/getObject">
           <h3 class="tileHeadline" metal:define-macro="listitem">
             <a class="summary url"
-                tal:attributes="href item_link;
-                                title item_type"
+                tal:define="link python: item.link_to_company_website or item_link;"
+                tal:attributes="href link;
+                                target python: '_blank' if item.link_to_company_website else '_self';"
                 tal:content="item_title">
               Item Title
             </a>
           </h3>
 
-          <div metal:use-macro="context/@@listing_view/macros/document_byline"></div>
-
           <div class="tileImage"
                tal:condition="item_has_image"
-               tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'">
-            <a tal:attributes="href item_link">
+               tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'"
+               style="float: right;">
+            <a tal:define="link python: item.link_to_company_website or item_link;"
+               tal:attributes="href link;
+                               target python: '_blank' if item.link_to_company_website else '_self';">
               <img tal:define="scales obj/@@images;
                                scale python:scales.scale('image', 'thumb')"
                   tal:replace="structure python:scale and scale.tag() or None" />
@@ -42,10 +44,10 @@
             </span>
           </div>
 
-          <div tal:condition="item/apsdeveloment_grades">
-            <strong>Grade(s):</strong> 
-            <span tal:repeat="grade item/apsdeveloment_grades">
-             <span tal:content="grade">[grade]</span><span tal:condition="not: repeat/grade/end">,</span>
+          <div class="tileBody" tal:condition="item/aps_system_login_information">
+            <div style="font-weight: bold; margin-top: 5px;">Login Information</div>
+            <span class="loginInformation" tal:content="structure item/aps_system_login_information/output">
+              [login information]
             </span>
           </div>
 
