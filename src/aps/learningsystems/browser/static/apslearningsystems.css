@@ -1,0 +1,39 @@
+.portaltype-system_warehouse .documentFirstHeading {
+	border-bottom: 0px;
+}
+.portaltype-system_warehouse #content-core article {
+	float: left;
+	width: 190px;
+	border: 1px solid #cccccc;
+	margin: 0px 8px 8px 0px;
+	padding: 10px;
+	border-radius: 4px;
+	height: 240px;
+	position: relative;
+}
+.portaltype-system_warehouse #content-core article .tileImage {
+	float: none;
+}
+.portaltype-system_warehouse #content-core article .tileHeadline {
+	font-size: 16px;
+	font-weight: bold;
+	margin-top: 10px;
+	margin-bottom: 5px;
+}
+.portaltype-system_warehouse #content-core article .tileDescription {
+	font-weight: 400;
+	/*text-overflow: ellipsis;*/
+	height: 60px;
+	overflow: hidden;
+}
+.portaltype-system_warehouse #content-core article .tileBody {
+	display: none;
+}
+.portaltype-system_warehouse #content-core article .tileFooter {
+	position: absolute;
+	bottom: 5px;
+}
+.pagination {
+	float: left;
+	clear: left;
+}
