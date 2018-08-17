@@ -30,16 +30,28 @@
 	display: none;
 }
 .portaltype-system_warehouse #content-core article .tileFooter {
-	position: absolute;
-	bottom: 5px;
+	/*position: absolute;
+	bottom: 5px;*/
 }
 .pagination {
 	float: left;
 	clear: left;
 }
-.portaltype-system_warehouse .tileIcon i {
+.portaltype-system_warehouse .tileIcon i,
+.portaltype-system_warehouse .tileSubject
+{
 	position: absolute;
+	color: #767676;
+}
+.portaltype-system_warehouse .tileIcon i {
 	bottom: 7px;
 	right: 7px;
-	color: #767676;
+}
+.portaltype-system_warehouse .tileSubject {
+	bottom: 4px;
+	left: 7px;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+	max-width: 150px;
+	overflow: hidden;
 }

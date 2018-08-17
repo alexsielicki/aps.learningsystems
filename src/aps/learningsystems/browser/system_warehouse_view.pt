@@ -75,6 +75,13 @@
             </span>
           </div>
 
+          <div class="tileFooter">
+            <a tal:attributes="href item_link"
+                i18n:translate="read_more">
+              More&hellip;
+            </a>
+          </div>
+
           <div class="tileIcon" tal:condition="item/aps_system_technology"
             tal:define="tech item/aps_system_technology">
             <i tal:condition="python: tech == 'Mobile app'" class="fas fa-mobile" aria-label="Mobile" title="Mobile"></i>
@@ -83,11 +90,9 @@
             <i tal:condition="python: tech == 'Website'" class="fab fa-chrome" aria-label="Website" title="Website"></i>
           </div>
 
-          <div class="tileFooter">
-            <a tal:attributes="href item_link"
-                i18n:translate="read_more">
-              Read More&hellip;
-            </a>
+          <div class="tileSubject" tal:define="subject item/aps_system_subject | nothing" tal:condition="item/aps_system_subject" tal:content="item/aps_system_subject"
+            tal:attributes="title string: Subject: ${subject}">
+
           </div>
 
           <div class="visualClear"><!-- --></div>

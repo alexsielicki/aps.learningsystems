@@ -10,6 +10,11 @@
       <required>False</required>
       <title>Contact Info</title>
     </field>
+    <field name="aps_system_subject" type="zope.schema.TextLine">
+      <description/>
+      <required>False</required>
+      <title>Subject</title>
+    </field>
     <field name="aps_system_technology" type="zope.schema.Choice">
       <description/>
       <required>False</required>
