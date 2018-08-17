@@ -26,6 +26,11 @@
         </h2>
 
         <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+          tal:define="field context/aps_system_subject;
+                      widget nocall: view/w/aps_system_subject;"
+        />
+
+        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
           tal:define="field context/aps_system_technology;
                       widget nocall: view/w/aps_system_technology;"
         />
