@@ -79,10 +79,10 @@
       <title>Cost</title>
       <values>
         <element>Free</element>
-        <element>Paid</element>
-        <element>District Purchased</element>
-        <element>Unknown</element>
-        <element>Mixed</element>
+        <element>Freemium</element>
+        <element>Subscription</element>
+        <element>1-time Purchase</element>
+        <element>District Provided</element>
       </values>
     </field>
     <field name="aps_system_language" type="zope.schema.Choice">
