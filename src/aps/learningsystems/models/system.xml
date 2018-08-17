@@ -13,7 +13,7 @@
     <field name="aps_system_technology" type="zope.schema.Choice">
       <description/>
       <required>False</required>
-      <title>Technology</title>
+      <title>Technology (Device/Platform)</title>
       <values>
         <element>Website</element>
         <element>Mobile app</element>
