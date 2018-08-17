@@ -31,36 +31,7 @@
   <element value="plone.app.contenttypes.behaviors.leadimage.ILeadImage"/>
  </property>
  <property name="schema"></property>
- <property
-    name="model_source">&lt;model xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema"&gt;
-    &lt;schema&gt;
-      &lt;field name="link_to_company_website" type="zope.schema.URI"&gt;
-        &lt;description&gt;External link to company website&lt;/description&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Link To Company Website&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name="contact_info" type="zope.schema.Text"&gt;
-        &lt;description&gt;Contact information of department that supports the tool (if applicable)&lt;/description&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Contact Info&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name="aps_hardware_price" type="zope.schema.TextLine"&gt;
-        &lt;description/&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Price&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name="aps_hardware_specifications" type="plone.app.textfield.RichText"&gt;
-        &lt;description/&gt;
-        &lt;required&gt;False&lt;/required&gt;
-        &lt;title&gt;Specifications&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name="aps_accessible" form:after="*" type="zope.schema.Bool"&gt;
-        &lt;description/&gt;
-        &lt;title&gt;This content is accessible&lt;/title&gt;
-        &lt;form:widget type="z3c.form.browser.radio.RadioFieldWidget"/&gt;
-      &lt;/field&gt;
-    &lt;/schema&gt;
-  &lt;/model&gt;</property>
+ <property name="model_source"></property>
  <property name="model_file">aps.learningsystems:models/device___hardware.xml</property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>

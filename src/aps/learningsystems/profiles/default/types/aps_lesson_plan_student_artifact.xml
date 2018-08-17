@@ -26,20 +26,7 @@
   <element value="plone.app.content.interfaces.INameFromTitle"/>
  </property>
  <property name="schema"></property>
- <property
-    name="model_source">&lt;model xmlns:form="http://namespaces.plone.org/supermodel/form" xmlns:i18n="http://xml.zope.org/namespaces/i18n" xmlns:lingua="http://namespaces.plone.org/supermodel/lingua" xmlns:marshal="http://namespaces.plone.org/supermodel/marshal" xmlns:security="http://namespaces.plone.org/supermodel/security" xmlns:users="http://namespaces.plone.org/supermodel/users" xmlns="http://namespaces.plone.org/supermodel/schema"&gt;
-    &lt;schema&gt;
-      &lt;field name="aps_lessonplan_studentartifact_file" type="plone.namedfile.field.NamedBlobFile"&gt;
-        &lt;description/&gt;
-        &lt;title&gt;File&lt;/title&gt;
-      &lt;/field&gt;
-      &lt;field name="aps_accessible" form:after="*" type="zope.schema.Bool"&gt;
-        &lt;description/&gt;
-        &lt;title&gt;This content is accessible&lt;/title&gt;
-        &lt;form:widget type="z3c.form.browser.radio.RadioFieldWidget"/&gt;
-      &lt;/field&gt;
-    &lt;/schema&gt;
-  &lt;/model&gt;</property>
+ <property name="model_source"></property>
  <property name="model_file">aps.learningsystems:models/aps_lesson_plan_student_artifact.xml</property>
  <property name="schema_policy">dexterity</property>
  <alias from="(Default)" to="(dynamic view)"/>
