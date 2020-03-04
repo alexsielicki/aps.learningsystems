@@ -5,10 +5,10 @@
       <required>False</required>
       <title>Link To Website</title>
     </field>
-    <field name="contact_info" type="zope.schema.Text">
+    <field name="contact_info" type="plone.app.textfield.RichText">
       <description>Contact information of department that supports the tool (if applicable)</description>
       <required>False</required>
-      <title>Contact Info</title>
+      <title>Contact Information</title>
     </field>
     <field name="aps_system_subject" type="zope.schema.TextLine">
       <description/>
