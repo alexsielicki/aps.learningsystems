@@ -39,13 +39,12 @@
       <metal:entry fill-slot="entry">
 
         <article class="tileItem" tal:define="obj item/getObject">
-
+        
           <div class="tileImage"
                tal:condition="item_has_image"
                tal:attributes="class python: 'tileImage' if item_description else 'tileImageNoFloat'">
-            <a tal:define="link python: item.link_to_company_website or item_link;"
-               tal:attributes="href link;
-                               target python: '_blank' if item.link_to_company_website else '_self';">
+            <a tal:define="link python: item_link;"
+               tal:attributes="href link;">
               <img tal:define="scales obj/@@images;
                                scale python:scales.scale('image', 'thumb')"
                   tal:replace="structure python:scale and scale.tag() or None" />
@@ -54,9 +53,8 @@
 
           <h2 class="tileHeadline" metal:define-macro="listitem">
             <a class="summary url"
-                tal:define="link python: item.link_to_company_website or item_link;"
-                tal:attributes="href link;
-                                target python: '_blank' if item.link_to_company_website else '_self';"
+                tal:define="link python: item_link;"
+                tal:attributes="href link;"
                 tal:content="item_title">
               Item Title
             </a>
