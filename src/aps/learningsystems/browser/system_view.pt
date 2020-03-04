@@ -12,53 +12,87 @@
         <div tal:replace="structure provider:plone.abovecontenttitle" />
         <h1 class="documentFirstHeading" tal:content="context/title" />
         <div tal:replace="structure provider:plone.belowcontenttitle" />
-        <p class="documentDescription" tal:content="context/description" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/link_to_company_website;
-                      widget nocall: view/w/link_to_company_website;"
-        />
-
-        <h2 tal:condition="python: context.aps_system_technology or context.aps_system_grades or context.aps_system_status
-                                   or context.aps_system_ferpa or context.aps_system_cost or context.aps_system_language">
+        <h2>
           Resource Overview
         </h2>
 
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_subject;
-                      widget nocall: view/w/aps_system_subject;"
-        />
+        <p class="documentDescription" tal:content="context/description" />
 
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_technology;
-                      widget nocall: view/w/aps_system_technology;"
-        />
-
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_grades;
-                      widget nocall: view/w/aps_system_grades;"
-        />
-
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_status;
-                      widget nocall: view/w/aps_system_status;"
-        />
-
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_ferpa;
-                      widget nocall: view/w/aps_system_ferpa;"
-        />
-
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_cost;
-                      widget nocall: view/w/aps_system_cost;"
-        />
-
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_language;
-                      widget nocall: view/w/aps_system_language;"
-        />
+        <table class="listing" 
+          tal:condition="python: context.aps_system_technology 
+                                 or context.aps_system_grades 
+                                 or context.aps_system_status
+                                 or context.aps_system_ferpa 
+                                 or context.aps_system_cost 
+                                 or context.aps_system_language">
+          <caption>System Application Details</caption>
+          <thead>
+            <tr>
+              <th scope="col" class="nosort">Category</th>
+              <th scope="col" class="nosort">Description</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr
+              tal:define="field context/aps_system_subject;
+                          widget nocall: view/w/aps_system_subject;"
+              tal:condition="field"
+            >
+              <th scope="row">Subject</th>
+              <td tal:content="structure widget/render">[field value]</td>
+            </tr>
+            <tr 
+              tal:define="field context/aps_system_technology;
+                          widget nocall: view/w/aps_system_technology;"
+              tal:condition="field"
+            >
+              <th scope="row">Device/Platform</th>
+              <td tal:content="structure widget/render">[field value]</td>
+            </tr>
+            <tr 
+              tal:define="field context/aps_system_grades;
+                          widget nocall: view/w/aps_system_grades;"
+              tal:condition="field"
+            >
+              <th scope="row">Grade(s)</th>
+              <td tal:content="structure widget/render">[field value]</td>
+            </tr>
+            <tr 
+              tal:define="field context/aps_system_status;
+                          widget nocall: view/w/aps_system_status;"
+              tal:condition="field"
+            >
+              <th scope="row">APS</th>
+              <td tal:content="structure widget/render">[field value]</td>
+            </tr>
+            <tr 
+              tal:define="field context/aps_system_ferpa;
+                          widget nocall: view/w/aps_system_ferpa;"
+              tal:condition="field"
+            >
+              <th scope="row">FERPA</th>
+              <td tal:content="structure widget/render">[field value]</td>
+            </tr>
+            <tr 
+              tal:define="field context/aps_system_cost;
+                          widget nocall: view/w/aps_system_cost;"
+              tal:condition="field"
+            >
+              <th scope="row">Cost</th>
+              <td tal:content="structure widget/render">[field value]</td>
+            </tr>
+            <tr 
+              tal:define="field context/aps_system_language;
+                          widget nocall: view/w/aps_system_language;"
+              tal:condition="field"
+            >
+              <th scope="row">Language</th>
+              <td tal:content="structure widget/render">[field value]</td>
+            </tr>
+          </tbody>
+        </table>
 
         <h2 tal:condition="python: context.contact_info or context.aps_system_support_information or context.aps_system_requirements
                                    or context.aps_system_login_information">
@@ -80,10 +114,29 @@
                       widget nocall: view/w/aps_system_requirements;"
         />
 
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
-          tal:define="field context/aps_system_login_information;
-                      widget nocall: view/w/aps_system_login_information;"
-        />
+        <tal:login_info tal:condition="python: context.link_to_company_website
+                                               or context.aps_system_login_information">
+
+          <h2>Login Information</h2>
+
+          <p class="callout"
+            tal:define="field context/link_to_company_website;"
+            tal:condition="field"
+          >
+            <a href="#"
+              tal:attributes="href field"
+            >
+              <span tal:content="context/Title">[Title]</span> Login URL
+            </a>
+          </p>
+
+          <div 
+            tal:define="field context/aps_system_login_information;
+                        widget nocall: view/w/aps_system_login_information;"
+            tal:condition="field"
+            tal:content="structure widget/render" />
+        
+        </tal:login_info>
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
     </tal:main-macro>
