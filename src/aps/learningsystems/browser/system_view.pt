@@ -30,7 +30,7 @@
           <caption>System Application Details</caption>
           <thead>
             <tr>
-              <th scope="col" class="nosort">Category</th>
+              <th scope="col" class="nosort" style="width: 30%;">Category</th>
               <th scope="col" class="nosort">Description</th>
             </tr>
           </thead>
