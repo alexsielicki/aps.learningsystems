@@ -43,7 +43,7 @@
   </div>
 
   <metal:listingmacro define-macro="listing">
-    <tal:results define="results view/results;
+    <tal:results define="results python:view.results(batch=False);
                          thumb_scale_list view/get_thumb_scale_list;
                          thumb_scale_table view/get_thumb_scale_table;
                          thumb_scale_summary view/get_thumb_scale_summary;
