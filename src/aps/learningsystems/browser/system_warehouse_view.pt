@@ -86,7 +86,7 @@
                     </a>
                   </div>
 
-                  <h2 class="tileHeadline" metal:define-macro="listitem">
+                  <h2 class="tileHeadline dotdotdot" metal:define-macro="listitem">
                     <a class="summary url"
                         tal:define="link python: item_link;"
                         tal:attributes="href link;"
