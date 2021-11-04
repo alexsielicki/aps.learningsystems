@@ -86,7 +86,7 @@
                     </a>
                   </div>
 
-                  <h2 class="tileHeadline dotdotdot" metal:define-macro="listitem">
+                  <h2 class="tileHeadline" metal:define-macro="listitem">
                     <a class="summary url"
                         tal:define="link python: item_link;"
                         tal:attributes="href link;"
@@ -95,14 +95,14 @@
                     </a>
                   </h2>
 
-                  <div class="tileDescription dotdotdot" tal:condition="item_description">
+                  <div class="tileDescription" tal:condition="item_description">
                     <span class="description" tal:content="item_description">
                       description
                     </span>
                   </div>
 
                   <div class="tileBody" tal:condition="item/aps_system_login_information">
-                    <div style="font-weight: bold; margin-top: 5px;">Login Information</div>
+                    <h3>Login Information</h3>
                     <span class="loginInformation" tal:content="structure item/aps_system_login_information/output">
                       [login information]
                     </span>
