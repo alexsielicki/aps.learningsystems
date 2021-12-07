@@ -95,7 +95,7 @@
                     </a>
                   </h2>
 
-                  <div class="tileDescription" tal:condition="item_description">
+                  <div class="tileDescription dotdotdot" tal:condition="item_description">
                     <span class="description" tal:content="item_description">
                       description
                     </span>

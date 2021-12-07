@@ -23,7 +23,7 @@
 }
 
 .template-system_warehouse_view #content-core .tileItem {
-  width: 315px;
+  width: 300px;
   height: 275px;
   white-space: normal;
   box-sizing: border-box;
@@ -68,6 +68,7 @@
   height: 150px;
   overflow: hidden;
   text-overflow: ellipsis;
+  clear: left;
 }
 .template-system_warehouse_view #content-core .tileBody {
   display: none;
