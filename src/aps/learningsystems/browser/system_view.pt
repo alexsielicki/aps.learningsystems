@@ -14,6 +14,35 @@
         <div tal:replace="structure provider:plone.belowcontenttitle" />
         <div tal:replace="structure provider:plone.abovecontentbody" />
 
+
+<tal:login_info tal:condition="python: context.link_to_company_website
+                               or context.aps_system_login_information">
+
+<div class="sw-section">
+          <h2>Login Information</h2>
+
+          <p class="button button-sm button-ochre" 
+            tal:define="field context/link_to_company_website;"
+            tal:condition="field"
+          >
+            <a href="#"
+              tal:attributes="href field"
+            >
+              <span tal:content="context/Title">[Title]</span> Login URL
+            </a>
+          </p>
+
+          <div style="margin-top:1em"
+            tal:define="field context/aps_system_login_information;
+                        widget nocall: view/w/aps_system_login_information;"
+            tal:condition="field"
+            tal:content="structure widget/render" />
+</div>
+        
+</tal:login_info>
+
+<div class="sw-section">
+
         <h2>
           Resource Overview
         </h2>
@@ -93,7 +122,9 @@
             </tr>
           </tbody>
         </table>
+        </div>
 
+<div class="sw-section">
         <h2 tal:condition="python: context.contact_info or context.aps_system_support_information or context.aps_system_requirements
                                    or context.aps_system_login_information">
           Resource Support
@@ -114,29 +145,7 @@
                       widget nocall: view/w/aps_system_requirements;"
         />
 
-        <tal:login_info tal:condition="python: context.link_to_company_website
-                                               or context.aps_system_login_information">
-
-          <h2>Login Information</h2>
-
-          <p class="callout"
-            tal:define="field context/link_to_company_website;"
-            tal:condition="field"
-          >
-            <a href="#"
-              tal:attributes="href field"
-            >
-              <span tal:content="context/Title">[Title]</span> Login URL
-            </a>
-          </p>
-
-          <div 
-            tal:define="field context/aps_system_login_information;
-                        widget nocall: view/w/aps_system_login_information;"
-            tal:condition="field"
-            tal:content="structure widget/render" />
-        
-        </tal:login_info>
+</div>        
 
         <div tal:replace="structure provider:plone.belowcontentbody" />
     </tal:main-macro>

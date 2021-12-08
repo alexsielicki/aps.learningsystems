@@ -15,7 +15,7 @@
   align-items: flex-start;
   align-content: flex-start;
   padding: 0;
-  margin: 2em 0 0 0;
+  margin: 0;
 }
 
 .template-system_warehouse_view #content-core .entries::before {
@@ -23,17 +23,21 @@
 }
 
 .template-system_warehouse_view #content-core .tileItem {
-  width: 300px;
-  height: 275px;
+  width: 310px;
+  height: 280px;
   white-space: normal;
   box-sizing: border-box;
-  margin: 15px 20px 30px 30px;
-  padding: 30px 15px 15px 30px;
-  background-color: #f0f0f0;
+  margin: 0 20px 45px 30px;
+  padding: 30px 12px 12px 30px;
+  background-color: #ffffff;
   border-radius: 20px 0 20px 0;
   box-shadow: 0 5px 8px rgb(50 50 93 / 10%), 0 5px 8px rgb(0 0 0 / 7%);
 }
-
+/*Removing Left Margins for every 4th item*/
+.template-system_warehouse_view #content-core .tileItem:nth-child(3n + 1) {
+  margin-left: 0;
+}
+/*Removing Right Margins for every 3rd item*/
 .template-system_warehouse_view #content-core .tileItem:nth-child(3n + 3) {
   margin-right: 0;
 }
@@ -56,8 +60,8 @@
 }
 
 .template-system_warehouse_view.portaltype-system_warehouse .tileHeadline {
-  font-size: 20px;
-  font-weight: 600;
+  font-size: 19px;
+  font-weight: 700;
   line-height: 1.45em;
   margin: 0 15px 18px 0;
 }
