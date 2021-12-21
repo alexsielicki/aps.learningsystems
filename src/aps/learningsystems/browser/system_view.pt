@@ -21,14 +21,14 @@
 <div class="sw-section">
           <h2>Login Information</h2>
 
-          <p class="button button-sm button-ochre" 
+          <p 
             tal:define="field context/link_to_company_website;"
             tal:condition="field"
           >
-            <a href="#"
+            <a class="button button-dkred" href="#"
               tal:attributes="href field"
             >
-              <span tal:content="context/Title">[Title]</span> Login URL
+              <span class="fas fa-external-link-alt"></span> <span tal:content="context/Title">[Title]</span> Login URL
             </a>
           </p>
 
