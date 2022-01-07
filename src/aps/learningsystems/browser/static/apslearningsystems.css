@@ -24,7 +24,7 @@
 
 .template-system_warehouse_view #content-core .tileItem {
   width: 310px;
-  height: 280px;
+  height: 250px;
   white-space: normal;
   box-sizing: border-box;
   margin: 0 20px 45px 30px;
@@ -67,9 +67,9 @@
 }
 .template-system_warehouse_view #content-core .tileDescription {
   font-size: 18px;
-  line-height: 1.6em;
+  line-height: 1.55em;
   font-weight: 400;
-  height: 150px;
+  height: 125px;
   overflow: hidden;
   text-overflow: ellipsis;
   clear: left;
