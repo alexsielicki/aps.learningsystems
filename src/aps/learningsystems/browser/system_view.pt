@@ -36,7 +36,8 @@
             tal:define="field context/aps_system_login_information;
                         widget nocall: view/w/aps_system_login_information;"
             tal:condition="field"
-            tal:content="structure widget/render" />
+            tal:content="structure widget/render" 
+          />
 </div>
         
 </tal:login_info>
@@ -125,10 +126,12 @@
         </div>
 
 <div class="sw-section">
-        <h2 tal:condition="python: context.contact_info or context.aps_system_support_information or context.aps_system_requirements
-                                   or context.aps_system_login_information">
-          Resource Support
-        </h2>
+        <h2>Resource Support</h2>
+
+        <tal:no-info 
+          tal:condition="python: not (context.contact_info or context.aps_system_support_information or context.aps_system_requirements)">
+          <p>No resouce support information provided.</p>
+        </tal:no-info>
 
         <tal:widget-definitions 
           tal:define="field context/contact_info;
