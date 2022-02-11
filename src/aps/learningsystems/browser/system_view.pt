@@ -130,17 +130,27 @@
           Resource Support
         </h2>
 
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+        <tal:widget-definitions 
           tal:define="field context/contact_info;
-                      widget nocall: view/w/contact_info;"
-        />
+                      widget nocall: view/w/contact_info;">
+          <tal:resource-support-widget metal:define-macro="resource-support-widget">
+            <div style="margin-bottom: 20px;"
+                  tal:condition="field"
+                  tal:attributes="class string:aps-learningsystems-field-${widget/__name__}">
+              <h3 tal:content="structure widget/label" tal:condition="not: noLabel|nothing" />
+              <div tal:content="structure widget/render" />
+            </div>
+          </tal:resource-support-widget>
+        </tal:widget-definitions>
 
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+        <tal:widget 
+          metal:use-macro="here/system_view/macros/resource-support-widget"
           tal:define="field context/aps_system_support_information;
                       widget nocall: view/w/aps_system_support_information;"
         />
 
-        <tal:widget metal:use-macro="here/lesson_plan_view/macros/aps-widget"
+        <tal:widget 
+          metal:use-macro="here/system_view/macros/resource-support-widget"
           tal:define="field context/aps_system_requirements;
                       widget nocall: view/w/aps_system_requirements;"
         />
