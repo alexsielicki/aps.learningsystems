@@ -50,7 +50,7 @@
                          img_class python:'thumb-%s pull-right' % thumb_scale_list;
                          showicons view/show_icons">
       <tal:listing condition="results">
-        <div class="entries" metal:define-slot="entries"
+        <div class="systemWarehouseEntries" metal:define-slot="entries"
             tal:define="portal context/@@plone_portal_state/portal;
                         image_scale portal/@@image_scale">
           <tal:repeat repeat="item results" metal:define-macro="entries">

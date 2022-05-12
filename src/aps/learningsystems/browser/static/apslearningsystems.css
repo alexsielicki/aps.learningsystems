@@ -7,19 +7,16 @@
   .documentFirstHeading {
   border-bottom: 0px;
 }
-.template-system_warehouse_view #content-core .entries {
+.template-system_warehouse_view #content-core .systemWarehouseEntries {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  justify-content: space-evenly;
+  justify-content: center;
   align-items: flex-start;
   align-content: flex-start;
+  gap: 45px 50px;
   padding: 0;
   margin: 0;
-}
-
-.template-system_warehouse_view #content-core .entries::before {
-  content: "";
 }
 
 .template-system_warehouse_view #content-core .tileItem {
@@ -27,19 +24,10 @@
   height: 250px;
   white-space: normal;
   box-sizing: border-box;
-  margin: 0 20px 45px 30px;
   padding: 30px 12px 12px 30px;
   background-color: #ffffff;
   border-radius: 20px 0 20px 0;
   box-shadow: 0 5px 8px rgb(50 50 93 / 10%), 0 5px 8px rgb(0 0 0 / 7%);
-}
-/*Removing Left Margins for every 4th item*/
-.template-system_warehouse_view #content-core .tileItem:nth-child(3n + 1) {
-  margin-left: 0;
-}
-/*Removing Right Margins for every 3rd item*/
-.template-system_warehouse_view #content-core .tileItem:nth-child(3n + 3) {
-  margin-right: 0;
 }
 
 .template-system_warehouse_view.portaltype-system_warehouse .tileImage,
