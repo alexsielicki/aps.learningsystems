@@ -1,6 +1,8 @@
 .template-system_warehouse_view.portaltype-system_warehouse .col-xs-12,
 .template-system_warehouse_view.portaltype-system_warehouse .col-sm-12 {
-  padding-left: 0px;
+  /* Changing the left padding on a fundamental plone grid class causes problems in other parts of the page
+     such as footer on mobile. */
+  /* padding-left: 0px; */
 }
 
 .template-system_warehouse_view.portaltype-system_warehouse
