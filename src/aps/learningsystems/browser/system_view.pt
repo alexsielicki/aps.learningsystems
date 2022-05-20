@@ -28,7 +28,8 @@
             <a class="button button-dkred" href="#"
               tal:attributes="href field"
             >
-              <span class="fas fa-external-link-alt"></span> <span tal:content="context/Title">[Title]</span> Login URL
+              <span class="fas fa-external-link-alt" /> 
+              <span tal:replace="context/Title">[Title]</span> Login URL
             </a>
           </p>
 
